@@ -84,7 +84,7 @@ alias serve="python -m SimpleHTTPServer"
 
 
 # todo
-alias todo='vim ~/Dropbox/x/todo.txt'
+alias todo='vim ~/chrono/todo.txt'
 
 # notes
 alias notes='vim ~/Dropbox/notes'
