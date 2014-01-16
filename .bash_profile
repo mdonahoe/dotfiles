@@ -107,8 +107,6 @@ alias gap="git add -p; git commit"
 alias sandbox="ssh dho@serioussandbox.com"
 alias authorizer="cat ~/.ssh/id_rsa.pub | ssh dho@serioussandbox.com 'cat >> .ssh/authorized_keys'"
 
-alias p="psql -h r01.pocketgems.com -U matt -p 5439 pocketgems"
-
 alias disable_main_keyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 
