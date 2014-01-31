@@ -173,3 +173,6 @@ if &term =~ '256color'
     " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
     set t_ut=
 endif
+
+" ctags recursive (from http://stackoverflow.com/a/5019111/53997 )
+set tags=tags;/
