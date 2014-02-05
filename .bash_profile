@@ -119,4 +119,5 @@ alias disable_main_keyboard="sudo kextunload /System/Library/Extensions/AppleUSB
 alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 
 
+alias here="nautilus ."
 #alias ls='ls --color=tty' 2>/dev/null
