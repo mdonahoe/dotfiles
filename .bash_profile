@@ -29,6 +29,14 @@ c_sgr0=`tput sgr0`
 
 
 
+hammer ()
+{
+    WAIT_TIME=2
+    until ($@); do
+           sleep $(( WAIT_TIME ))
+    done
+}
+
 parse_git_branch ()
 {
   if git rev-parse --git-dir --no-color >/dev/null 2>&1
