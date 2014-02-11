@@ -121,3 +121,8 @@ alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTop
 
 alias here="nautilus ."
 #alias ls='ls --color=tty' 2>/dev/null
+
+# git completion ( from http://code-worrier.com/blog/autocomplete-git/ )
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
