@@ -88,12 +88,12 @@ set magic
 
 colorscheme vividchalk
 
-" Highlight columns over 80 characters and trailing whitespace
+" Highlight columns over 100 characters and trailing whitespace
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 
 noremap ,ll :match OverLength //<CR>
-noremap ,l, :match OverLength /\%81v.\+\\|\s\+$/<CR>
-match OverLength /\%81v.\+\|\s\+$/
+noremap ,l, :match OverLength /\%101v.\+\\|\s\+$/<CR>
+match OverLength /\%101v.\+\|\s\+$/
 
 " commands to turn on/off autoindenting
 " noremap ,ii :set nocindent<CR>:set noautoindent<CR>
