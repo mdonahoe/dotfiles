@@ -176,3 +176,6 @@ endif
 
 " ctags recursive (from http://stackoverflow.com/a/5019111/53997 )
 set tags=tags;/
+
+" youcompleteme jump to definition/declaration
+nnoremap ,jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
