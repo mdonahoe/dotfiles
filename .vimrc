@@ -179,3 +179,6 @@ set tags=tags;/
 
 " youcompleteme jump to definition/declaration
 nnoremap ,jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" yank selection to system clipboard (from http://stackoverflow.com/a/11489440/53997)
+vnoremap <C-c> "*y
