@@ -1,0 +1,8 @@
+#!/bin/bash
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_CONTROL
+
+# fake our name to trick java (so bot-spy will work right)
+wmname LG3D
