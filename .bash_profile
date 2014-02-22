@@ -13,6 +13,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
 export PATH=/usr/local/google_appengine:$PATH
+export PATH=~/bin/:$PATH
+export PATH=~/aircam/build/bin/:$PATH
 
 export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
