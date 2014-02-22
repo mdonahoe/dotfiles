@@ -31,6 +31,11 @@ c_sgr0=`tput sgr0`
 
 
 
+clone ()
+{
+    git clone git@github.com:${1}.git;
+}
+
 hammer ()
 {
     WAIT_TIME=2
