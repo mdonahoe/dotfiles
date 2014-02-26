@@ -133,3 +133,8 @@ alias here="nautilus ."
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+# web browser!
+web(){
+    google-chrome $1
+}
