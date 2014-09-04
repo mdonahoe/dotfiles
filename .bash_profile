@@ -12,7 +12,6 @@ export EDITOR='vim'
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
-export PATH=/usr/local/google_appengine:$PATH
 export PATH=~/bin/:$PATH
 export PATH=~/aircam/build/bin/:$PATH
 
@@ -41,6 +40,13 @@ hammer ()
     WAIT_TIME=2
     until ($@); do
            sleep $(( WAIT_TIME ))
+    done
+}
+
+crowbar ()
+{
+    while ($@); do
+        :  # no-op
     done
 }
 
