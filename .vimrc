@@ -1,37 +1,10 @@
 set nocompatible
 filetype off                  " required!
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-"Bundle 'gmarik/vundle'
-
-" My bundles here:
-"Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menu,menuone
-"
-" original repos on GitHub
-" non-GitHub repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
 
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
-
-" The rest is my file as normal!
 
 set noswapfile
 set cursorline              " have a line indicate the cursor location
@@ -45,7 +18,7 @@ set novisualbell        " turn off visual bell
 " easy tabs
 noremap ,f :tabn<CR>
 noremap ,a :tabp<CR>
-noremap ,t :tabnew 
+noremap ,t :tabnew<Space>
 
 " use 'jj' to exit insert mode
 inoremap jj <Esc>
@@ -65,7 +38,7 @@ noremap   <Right>  <NOP>
 
 
 " Make multiple windows easier
-" noremap ,, <C-W>w
+noremap ,, <C-W>w
 " noremap ,v <C-W>v
 " noremap ,c <C-W>c
 
