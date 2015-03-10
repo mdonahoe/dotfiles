@@ -19,6 +19,7 @@ export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
 
 # MacPorts Bash shell command completion
+GIT_PS1_SHOWDIRTYSTATE=1
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
@@ -37,7 +38,7 @@ clone ()
 
 hammer ()
 {
-    WAIT_TIME=2
+    WAIT_TIME=5
     until ($@); do
            sleep $(( WAIT_TIME ))
     done
@@ -79,7 +80,8 @@ branch_color ()
 }
 
 #PS1='\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
-PS1='$(parse_git_branch)\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
+#PS1='$(parse_git_branch)\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
+PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 
 ##GIT ALIASES
 alias gs="git status"

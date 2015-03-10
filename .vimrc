@@ -2,6 +2,8 @@ set nocompatible
 filetype off                  " required!
 
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_path_to_python_interpreter = '/home/matt/aircam/build/bin/mc_python'
+let g:ycm_autoclose_preview_window_after_completion = 1
 set completeopt=menu,menuone
 
 filetype plugin indent on     " required!
