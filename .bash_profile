@@ -13,7 +13,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
 export PATH=~/bin/:$PATH
-export PATH=~/aircam/build/bin/:$PATH
 
 export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
@@ -38,7 +37,7 @@ clone ()
 
 hammer ()
 {
-    WAIT_TIME=5
+    WAIT_TIME=1
     until ($@); do
            sleep $(( WAIT_TIME ))
     done
@@ -146,3 +145,11 @@ fi
 web(){
     google-chrome $1
 }
+
+ding() {
+    echo "ding $@"
+    $@
+    ssh matt@matts-imac "say $@ complete"
+}
+
+alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
