@@ -7,12 +7,12 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 set completeopt=menu,menuone
 
 filetype plugin indent on     " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " My bundles here:
 Bundle 'scrooloose/nerdtree'
