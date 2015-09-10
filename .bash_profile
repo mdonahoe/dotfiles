@@ -78,8 +78,6 @@ branch_color ()
         echo -ne $color
 }
 
-#PS1='\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
-#PS1='$(parse_git_branch)\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 
 ##GIT ALIASES
@@ -153,3 +151,13 @@ ding() {
 }
 
 alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
+
+alias skyrev="~/aircam/build/bin/skyrev_client"
+
+# AWS Keys
+# export AWS_ACCESS_KEY_ID="AKIAIPU7NT65OSZMYXYA"
+# export AWS_SECRET_ACCESS_KEY="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"
+# export OSG_DIR=~/osg/
+# export OSG_LIBRARY_PATH=~/osg/build/lib/
+# export OSG_FILE_PATH=~/Downloads/OpenSceneGraph-Data-3.0.0:~/OpenSceneGraph-Data-3.0.0/Images
+# export NDK=~/Downloads/android-ndk-r10d/
