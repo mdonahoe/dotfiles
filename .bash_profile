@@ -155,8 +155,6 @@ alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=co
 alias skyrev="~/aircam/build/bin/skyrev_client"
 
 # AWS Keys
-# export AWS_ACCESS_KEY_ID="AKIAIPU7NT65OSZMYXYA"
-# export AWS_SECRET_ACCESS_KEY="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"
 # export OSG_DIR=~/osg/
 # export OSG_LIBRARY_PATH=~/osg/build/lib/
 # export OSG_FILE_PATH=~/Downloads/OpenSceneGraph-Data-3.0.0:~/OpenSceneGraph-Data-3.0.0/Images
