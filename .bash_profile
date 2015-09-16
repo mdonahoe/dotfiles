@@ -18,7 +18,6 @@ export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
 
 # MacPorts Bash shell command completion
-GIT_PS1_SHOWDIRTYSTATE=1
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
@@ -50,6 +49,7 @@ crowbar ()
     done
 }
 
+<<<<<<< HEAD
 parse_git_branch ()
 {
   if git rev-parse --git-dir --no-color >/dev/null 2>&1
@@ -79,22 +79,40 @@ branch_color ()
 }
 
 PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
+=======
+>>>>>>> edit the git aliases
 
 ##GIT ALIASES
-alias gs="git status"
 alias gss="git submodule status"
-alias gc="git checkout"
 alias gcp="git cherry-pick"
-alias gd="git diff --color"
 alias gsur="git submodule update --init --recursive"
-# lists commits between local branch and origin/master
-alias gl='git log $(git merge-base origin/master HEAD)^.. --oneline'
 # lists commits between local branch and its origin copy
 alias glo='git log $(git merge-base origin/$(parse_git_branch) HEAD)^.. --oneline'
-# opens gitk in the background so it doesnt consume the terminal
-alias gk="gitk --all > /dev/null 2>&1&"
 # reset master to origin master
 alias remaster="git reset --hard origin/master"
+
+
+# Basic shortcuts
+alias gs="git status"
+alias gc="git checkout"
+alias gd="git diff --color"
+
+# Lists commits between local branch and origin/master
+# Note: this will be tricked by merge commits
+alias gl='git log origin/master.. --oneline --no-merges'
+
+# add changes and commit
+alias gap="git add -p; git commit"
+
+# Show me all my branches, locally and remote
+alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
+
+# Opens gitk in the background so it doesnt consume the terminal
+alias gk="gitk --all > /dev/null 2>&1&"
+
+# show git branch and dirty state in the command prompt
+GIT_PS1_SHOWDIRTYSTATE=1
+PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 
 # cd shortcuts
 source ~/cd_shorties.sh
@@ -122,8 +140,6 @@ alias sbp="source ~/.bash_profile"
 alias ql="qlmanage -p &>/dev/null"
 alias sl="ls"
 
-alias gap="git add -p; git commit"
-
 alias sandbox="ssh dho@serioussandbox.com"
 alias authorizer="cat ~/.ssh/id_rsa.pub | ssh dho@serioussandbox.com 'cat >> .ssh/authorized_keys'"
 
@@ -133,11 +149,6 @@ alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTop
 
 alias here="nautilus ."
 #alias ls='ls --color=tty' 2>/dev/null
-
-# git completion ( from http://code-worrier.com/blog/autocomplete-git/ )
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 
 # web browser!
 web(){
@@ -150,11 +161,6 @@ ding() {
     ssh matt@matts-imac "say $@ complete"
 }
 
-alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
-
-alias skyrev="~/aircam/build/bin/skyrev_client"
-
-# AWS Keys
 # export OSG_DIR=~/osg/
 # export OSG_LIBRARY_PATH=~/osg/build/lib/
 # export OSG_FILE_PATH=~/Downloads/OpenSceneGraph-Data-3.0.0:~/OpenSceneGraph-Data-3.0.0/Images
