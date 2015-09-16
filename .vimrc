@@ -16,7 +16,10 @@ Bundle 'gmarik/Vundle.vim'
 
 " My bundles here:
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'kien/ctrlp.vim'
 
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menu,menuone
@@ -50,10 +53,11 @@ syntax on
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell        " turn off visual bell
 
+let mapleader=","
 " easy tabs
-noremap ,f :tabn<CR>
-noremap ,a :tabp<CR>
-noremap ,t :tabnew<Space>
+noremap <leader>f :tabn<CR>
+noremap <leader>a :tabp<CR>
+noremap <leader>t :tabnew<Space>
 
 " use 'jj' to exit insert mode
 inoremap jj <Esc>
@@ -73,11 +77,9 @@ noremap   <Right>  <NOP>
 
 
 " Make multiple windows easier
-noremap ,, <C-W>w
-" noremap ,v <C-W>v
-" noremap ,c <C-W>c
+noremap <leader><leader> <C-W>w
 
-noremap ,h :noh<CR>
+noremap <leader>h :noh<CR>
 
 let g:acp_completeoptPreview=1
 
@@ -99,8 +101,8 @@ colorscheme vividchalk
 " Highlight columns over 100 characters and trailing whitespace
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 
-noremap ,ll :match OverLength //<CR>
-noremap ,l, :match OverLength /\%101v.\+\\|\s\+$/<CR>
+noremap <leader>ll :match OverLength //<CR>
+noremap <leader>l<leader> :match OverLength /\%101v.\+\\|\s\+$/<CR>
 match OverLength /\%101v.\+\|\s\+$/
 
 " commands to turn on/off autoindenting
@@ -137,7 +139,7 @@ set whichwrap=<,>,h,l,[,]
 " Don't wrap text to the screen
 set nowrap
 
-noremap ,d :noh<CR>
+noremap <leader>d :noh<CR>
 
 " noremap ,e :tabf ~/.vimrc<CR>
 " noremap ,s :source ~/.vimrc<CR>
@@ -186,7 +188,7 @@ endif
 set tags=tags;/
 
 " youcompleteme jump to definition/declaration
-nnoremap ,jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " yank selection to system clipboard (from http://stackoverflow.com/a/11489440/53997)
 vnoremap <C-c> "*y
@@ -276,3 +278,5 @@ function! GoogleCppIndent()
 
     return l:orig_indent
 endfunction
+
+map <C-n> :NERDTreeToggle<CR>
