@@ -280,3 +280,6 @@ function! GoogleCppIndent()
 endfunction
 
 map <C-n> :NERDTreeToggle<CR>
+
+set wildignore+=*.runlog
+set wildignore+=build/RelWithDebInfoWorkstation/bin/*
