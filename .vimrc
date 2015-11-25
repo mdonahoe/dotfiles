@@ -18,8 +18,11 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'nvie/vim-flake8'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/a.vim'
+
+let python_highlight_all=1
 
 let g:ycm_confirm_extra_conf = 0
 set completeopt=menu,menuone

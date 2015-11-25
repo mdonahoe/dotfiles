@@ -132,3 +132,6 @@ ding() {
 # export OSG_LIBRARY_PATH=~/osg/build/lib/
 # export OSG_FILE_PATH=~/Downloads/OpenSceneGraph-Data-3.0.0:~/OpenSceneGraph-Data-3.0.0/Images
 # export NDK=~/Downloads/android-ndk-r10d/
+
+
+export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
