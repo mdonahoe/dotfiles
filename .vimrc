@@ -21,6 +21,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'nvie/vim-flake8'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
+Bundle 'wakatime/vim-wakatime'
 
 let python_highlight_all=1
 

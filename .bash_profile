@@ -36,9 +36,8 @@ clone ()
 
 hammer ()
 {
-    WAIT_TIME=1
     until ($@); do
-           sleep $(( WAIT_TIME ))
+           sleep 1
     done
 }
 
@@ -48,16 +47,6 @@ crowbar ()
         :  # no-op
     done
 }
-
-##GIT ALIASES
-alias gss="git submodule status"
-alias gcp="git cherry-pick"
-alias gsur="git submodule update --init --recursive"
-# lists commits between local branch and its origin copy
-alias glo='git log $(git merge-base origin/$(parse_git_branch) HEAD)^.. --oneline'
-# reset master to origin master
-alias remaster="git reset --hard origin/master"
-
 
 # Basic shortcuts
 alias gs="git status"
@@ -128,10 +117,12 @@ ding() {
     ssh matt@matts-imac "say $@ complete"
 }
 
-# export OSG_DIR=~/osg/
-# export OSG_LIBRARY_PATH=~/osg/build/lib/
-# export OSG_FILE_PATH=~/Downloads/OpenSceneGraph-Data-3.0.0:~/OpenSceneGraph-Data-3.0.0/Images
-# export NDK=~/Downloads/android-ndk-r10d/
+export OSG_LIBRARY_PATH=~/aircam/build/host_third_party/lib
 
 
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
+eval "$(register-python-argcomplete launch_pipeline)"
+
+# Chromium Depot tools
+export PATH=~/streaming_demos/depot_tools:"$PATH"
+export TERM=xterm-256color
