@@ -37,7 +37,7 @@ colorscheme OceanicNext
 set background=dark
 
 set wildignore+=*.runlog
-set wildignore+=build/RelWithDebInfoWorkstation/bin/*
+set wildignore+=build/*
 
 " ---- Plugins ----
 "  Required, but I don't know what these do...
@@ -60,13 +60,16 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'jistr/vim-nerdtree-tabs'
 
+" TODO(matt): figure out how to not clobber my key settings
+" Bundle 'easymotion/vim-easymotion'
+
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_path_to_python_interpreter = '/home/matt/aircam/build/host_aircam/bin/mc_python'
+let g:ycm_path_to_python_interpreter = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_always_populate_location_list = 1
+let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
-" jump to definition/declaration
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
@@ -112,5 +115,8 @@ set ruler
 " have a line indicate the cursor location
 set cursorline
 
+" Set shortcuts for plugins
 map <leader><leader> :NERDTreeFocusToggle<CR>
 map <leader>n :NERDTreeTabsClose<CR>
+map <leader>r :NERDTreeFind<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>

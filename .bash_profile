@@ -55,10 +55,11 @@ alias gd="git diff --color"
 
 # Lists commits between local branch and origin/master
 # Note: this will be tricked by merge commits
-alias gl='git log origin/master.. --oneline --no-merges'
+alias gl='git log origin/master... --oneline --no-merges'
 
 # add changes and commit
 alias gap="git add -p; git commit"
+alias gapa="git add -p; git commit --amend --no-edit"
 
 # Show me all my branches, locally and remote
 alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
@@ -102,6 +103,8 @@ alias authorizer="cat ~/.ssh/id_rsa.pub | ssh dho@serioussandbox.com 'cat >> .ss
 alias disable_main_keyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
 
+alias synergize="/usr/bin/synergyc -f --no-tray --debug NOTE --name kursk matts-imac.local:24800"
+
 
 alias here="nautilus ."
 #alias ls='ls --color=tty' 2>/dev/null
@@ -122,6 +125,7 @@ export OSG_LIBRARY_PATH=~/aircam/build/host_third_party/lib
 
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 eval "$(register-python-argcomplete launch_pipeline)"
+eval "$(register-python-argcomplete skyrun)"
 
 # Chromium Depot tools
 export PATH=~/streaming_demos/depot_tools:"$PATH"
