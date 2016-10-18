@@ -6,7 +6,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export HISTCONTROL=erasedups
 export FIGNORE=$FIGNORE:.pyc
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # homebrew told me to do this (local/bin before usr/bin)
 export PATH=/usr/local/bin:$PATH
@@ -79,19 +79,19 @@ alias serve="python -m SimpleHTTPServer"
 
 
 # todo
-alias todo='vim ~/chrono/todo.txt'
+alias todo='nvim ~/chrono/todo.txt'
 
 # notes
-alias notes='vim ~/Dropbox/notes'
+alias notes='nvim ~/Dropbox/notes'
 
 # photo editing
 alias pixel='open -a Pixelmator'
 
 # hosts file
-alias hosts='sudo vim /etc/hosts'
+alias hosts='sudo nvim /etc/hosts'
 
 # editing this file
-alias vbp="vim ~/.bash_profile"
+alias vbp="nvim ~/.bash_profile"
 alias sbp="source ~/.bash_profile"
 
 alias ql="qlmanage -p &>/dev/null"
@@ -109,6 +109,9 @@ alias synergize="/usr/bin/synergyc -f --no-tray --debug NOTE --name kursk matts-
 alias here="nautilus ."
 #alias ls='ls --color=tty' 2>/dev/null
 
+# Show the status of the current git repo and cd to its root. Fail if not in a repo.
+alias cg="git status && cd \`git rev-parse --show-toplevel\`"
+
 # web browser!
 web(){
     google-chrome $1
@@ -119,9 +122,6 @@ ding() {
     $@
     ssh matt@matts-imac "say $@ complete"
 }
-
-export OSG_LIBRARY_PATH=~/aircam/build/host_third_party/lib
-
 
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 eval "$(register-python-argcomplete launch_pipeline)"

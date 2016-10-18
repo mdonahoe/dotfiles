@@ -39,10 +39,16 @@ set background=dark
 set wildignore+=*.runlog
 set wildignore+=build/*
 
+" try to keep the edit line centered vertically on screen
+set so=999
+
 " ---- Plugins ----
 "  Required, but I don't know what these do...
 filetype off
 filetype plugin indent on
+
+autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -57,7 +63,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'nvie/vim-flake8'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
-Bundle 'wakatime/vim-wakatime'
 Bundle 'jistr/vim-nerdtree-tabs'
 
 " TODO(matt): figure out how to not clobber my key settings
@@ -77,7 +82,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
 
-" ---- Key Bindings ----
+" ---- Simple Key Bindings ----
 let mapleader=","
 " easy tabs
 noremap <leader>f :tabn<CR>
@@ -109,14 +114,23 @@ noremap <leader>d :noh<CR>
 " quick way to add a line
 nnoremap <CR> o<Esc>
 
+" --- Plugin Key Bindings ---
+
+" Bring up the NERDTree console or switch back to the main buffer
+map <leader><leader> :NERDTreeFocusToggle<CR>
+
+" Close the console
+map <leader>n :NERDTreeTabsClose<CR>
+
+" Search for files
+map <leader>r :NERDTreeFind<CR>
+
+" jump to definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+
 " ---- Status Line ----
 " right corner line num
 set ruler
 " have a line indicate the cursor location
 set cursorline
-
-" Set shortcuts for plugins
-map <leader><leader> :NERDTreeFocusToggle<CR>
-map <leader>n :NERDTreeTabsClose<CR>
-map <leader>r :NERDTreeFind<CR>
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
