@@ -59,7 +59,7 @@ Bundle 'gmarik/Vundle.vim'
 " My bundles here
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
 Bundle 'nvie/vim-flake8'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
