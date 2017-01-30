@@ -60,10 +60,10 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 " Bundle 'airblade/vim-gitgutter'
-Bundle 'nvie/vim-flake8'
+" Bundle 'nvie/vim-flake8'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/a.vim'
-Bundle 'jistr/vim-nerdtree-tabs'
+" Bundle 'jistr/vim-nerdtree-tabs'
 
 " TODO(matt): figure out how to not clobber my key settings
 " Bundle 'easymotion/vim-easymotion'
@@ -76,10 +76,10 @@ let g:ycm_always_populate_location_list = 1
 let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
 
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+"Bundle 'vim-airline/vim-airline'
+"Bundle 'vim-airline/vim-airline-themes'
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
 
 " ---- Simple Key Bindings ----
@@ -117,10 +117,10 @@ nnoremap <CR> o<Esc>
 " --- Plugin Key Bindings ---
 
 " Bring up the NERDTree console or switch back to the main buffer
-map <leader><leader> :NERDTreeFocusToggle<CR>
+" map <leader><leader> :NERDTreeFocusToggle<CR>
 
 " Close the console
-map <leader>n :NERDTreeTabsClose<CR>
+" map <leader>n :NERDTreeTabsClose<CR>
 
 " Search for files
 map <leader>r :NERDTreeFind<CR>
@@ -134,3 +134,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 set ruler
 " have a line indicate the cursor location
 set cursorline
+
+set clipboard=unnamed
+
+

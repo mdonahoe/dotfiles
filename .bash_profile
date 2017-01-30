@@ -63,6 +63,7 @@ alias gapa="git add -p; git commit --amend --no-edit"
 
 # Show me all my branches, locally and remote
 alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
+alias whogit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate"
 
 # Opens gitk in the background so it doesnt consume the terminal
 alias gk="gitk --all > /dev/null 2>&1&"
@@ -127,6 +128,5 @@ export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 eval "$(register-python-argcomplete launch_pipeline)"
 eval "$(register-python-argcomplete skyrun)"
 
-# Chromium Depot tools
-export PATH=~/streaming_demos/depot_tools:"$PATH"
 export TERM=xterm-256color
+export PATH="$HOME/.cargo/bin:$PATH"
