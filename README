@@ -1,4 +1,13 @@
 Dotfiles
 --------
 
-simlink dotfiles in this directory to their required location
+Steps to setup a new machine
+
+1. Create an ssh key
+2. Upload key to github
+3. Clone this repo
+4. Run link.sh
+5. Install neovim
+6. Download vim-plug (for neovim)
+7. Install powerline-fonts
+8. Create some bash shortcuts in ~/cd_shorties.sh

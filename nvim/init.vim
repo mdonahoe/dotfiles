@@ -50,37 +50,34 @@ filetype plugin indent on
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.local/share/nvim/plugged')
+
 
 " let Vundle manage Vundle (required)
-Bundle 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
 " My bundles here
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-" Bundle 'airblade/vim-gitgutter'
-" Bundle 'nvie/vim-flake8'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/a.vim'
-" Bundle 'jistr/vim-nerdtree-tabs'
-
-" TODO(matt): figure out how to not clobber my key settings
-" Bundle 'easymotion/vim-easymotion'
-
-Bundle 'Valloric/YouCompleteMe'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/a.vim'
+Plug 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_path_to_python_interpreter = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
+let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
+if filereadable(mc_python_path)
+    let g:ycm_path_to_python_interpreter = mc_python_path
+endif
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
 
-"Bundle 'vim-airline/vim-airline'
-"Bundle 'vim-airline/vim-airline-themes'
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
+" Initialize plugin system
+call plug#end()
 
 " ---- Simple Key Bindings ----
 let mapleader=","
@@ -136,5 +133,4 @@ set ruler
 set cursorline
 
 set clipboard=unnamed
-
 
