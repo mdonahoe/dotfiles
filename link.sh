@@ -2,4 +2,5 @@
 this_directory="$(pwd)"
 cd ~
 ln -s $this_directory/.bash_profile .
-ln -s $this_directory/nvim .config/nvim
+ln -s $this_directory/.inputrc .
+ln -s $this_directory/nvim .config/

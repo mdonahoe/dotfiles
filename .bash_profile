@@ -127,6 +127,8 @@ ding() {
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 eval "$(register-python-argcomplete launch_pipeline)"
 eval "$(register-python-argcomplete skyrun)"
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000000
 
 export TERM=xterm-256color
 export PATH="$HOME/.cargo/bin:$PATH"
