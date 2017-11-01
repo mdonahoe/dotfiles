@@ -70,6 +70,8 @@ alias whogit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=c
 alias gk="gitk --all > /dev/null 2>&1&"
 
 # show git branch and dirty state in the command prompt
+source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 
