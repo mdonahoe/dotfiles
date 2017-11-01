@@ -9,10 +9,11 @@ export FIGNORE=$FIGNORE:.pyc
 export EDITOR='nvim'
 
 # homebrew told me to do this (local/bin before usr/bin)
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
-export PATH=~/bin/:$PATH
+# export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/share/python:$PATH
+# export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
+# export PATH=~/bin/:$PATH
+export PATH=~/aircam/:$PATH
 
 export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
@@ -125,10 +126,10 @@ ding() {
 }
 
 export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
-eval "$(register-python-argcomplete launch_pipeline)"
-eval "$(register-python-argcomplete skyrun)"
+# eval "$(register-python-argcomplete launch_pipeline)"
+# eval "$(register-python-argcomplete skyrun)"
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 
 export TERM=xterm-256color
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
