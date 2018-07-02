@@ -9,5 +9,8 @@ Steps to setup a new machine
 4. Run link.sh
 5. Install neovim
 6. Download vim-plug (for neovim)
-7. Install powerline-fonts
-8. Create some bash shortcuts in ~/cd_shorties.sh
+7. nvim:PlugInstall
+9. pip install neovim
+9. cd YouCompleteMe; ./install.py --clang-completer
+10. Create some bash shortcuts in ~/cd_shorties.sh
+11. Install powerline-fonts
