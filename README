@@ -14,3 +14,4 @@ Steps to setup a new machine
 9. cd YouCompleteMe; ./install.py --clang-completer
 10. Create some bash shortcuts in ~/cd_shorties.sh
 11. Install powerline-fonts
+12. Update terminal colorscheme
