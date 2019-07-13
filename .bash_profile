@@ -65,6 +65,7 @@ alias gapa="git add -p; git commit --amend --no-edit"
 # Show me all my branches, locally and remote
 alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
 alias whogit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate"
+alias mergedgit="git for-each-ref --merged origin/master --format='%(authoremail) %09 %(refname:short)' --sort=committerdate --sort=committeremail refs/remotes/"
 
 # Opens gitk in the background so it doesnt consume the terminal
 alias gk="gitk --all > /dev/null 2>&1&"

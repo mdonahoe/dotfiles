@@ -33,7 +33,7 @@ set hlsearch
 " show what's currently been entered
 set showcmd
 
-colorscheme OceanicNext
+colorscheme vividchalk
 set background=dark
 
 set wildignore+=*.runlog
@@ -59,6 +59,9 @@ Plug 'gmarik/Vundle.vim'
 
 " My bundles here
 Plug 'kien/ctrlp.vim'
+let g:ctrlp_max_files = 25000
+let g:ctrlp_custom_ignore = 'build\|DS_Store\|git'
+
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
@@ -75,6 +78,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=0
+hi IndentGuidesEven ctermbg=8
 
 " Initialize plugin system
 call plug#end()
