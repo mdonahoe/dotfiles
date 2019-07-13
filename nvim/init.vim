@@ -37,7 +37,9 @@ colorscheme OceanicNext
 set background=dark
 
 set wildignore+=*.runlog
-set wildignore+=build/*
+set wildignore+=*/build/*
+set wildignore+=*/.git/*
+set wildignore+=*/third_party/*
 
 " try to keep the edit line centered vertically on screen
 set so=999

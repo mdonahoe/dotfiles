@@ -63,15 +63,15 @@ alias gap="git add -p; git commit"
 alias gapa="git add -p; git commit --amend --no-edit"
 
 # Show me all my branches, locally and remote
-alias mygit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate | grep `git config --get user.email`"
 alias whogit="git for-each-ref --format='%(authoremail) %09 %(refname)' --sort=committerdate"
+alias mygit="whogit | grep `git config --get user.email`"
 
 # Opens gitk in the background so it doesnt consume the terminal
 alias gk="gitk --all > /dev/null 2>&1&"
 
 # show git branch and dirty state in the command prompt
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+# source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+# source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 
@@ -135,3 +135,4 @@ export HISTFILESIZE=1000000000
 
 export TERM=xterm-256color
 # export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"
