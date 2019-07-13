@@ -7,6 +7,7 @@ syntax enable
 
 " Don't wrap text to the screen
 set nowrap
+
 " Allow cursor movement to wrap across lines
 set whichwrap=<,>,h,l,[,]
 
@@ -16,7 +17,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-" set working directory to current file
+" Set working directory to current file
 set autochdir
 
 " Do indenting
@@ -30,7 +31,7 @@ set smartcase
 set incsearch
 set hlsearch
 
-" show what's currently been entered
+" Show what's currently been entered
 set showcmd
 
 colorscheme vividchalk
@@ -39,7 +40,7 @@ set background=dark
 set wildignore+=*.runlog
 set wildignore+=build/*
 
-" try to keep the edit line centered vertically on screen
+" Try to keep the edit line centered vertically on screen
 set so=999
 
 " ---- Plugins ----
@@ -65,20 +66,26 @@ let g:ctrlp_custom_ignore = 'build\|DS_Store\|git'
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
-let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
-if filereadable(mc_python_path)
-    let g:ycm_path_to_python_interpreter = mc_python_path
-endif
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
+" YCM jump to definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
+" Let YCM/Jedi find the skydio python interpreter
+let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
+if filereadable(mc_python_path)
+    let g:ycm_path_to_python_interpreter = mc_python_path
+endif
+
+" Nice status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
+" Colored indents
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
@@ -90,12 +97,13 @@ call plug#end()
 
 " ---- Simple Key Bindings ----
 let mapleader=","
-" easy tabs
+
+" Easy tabs
 noremap <leader>f :tabn<CR>
 noremap <leader>a :tabp<CR>
 noremap <leader>t :tabnew<Space>
 
-" use 'jj' to exit insert mode
+" Use 'jj' to exit insert mode
 inoremap jj <Esc>
 
 " Fat finger saving
@@ -104,7 +112,7 @@ command Wq wq
 command W w
 command Q q
 
-" disable all arrowkeys
+" Disable all arrowkeys
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -117,29 +125,15 @@ noremap   <Right>  <NOP>
 " Clear search highlight
 noremap <leader>d :noh<CR>
 
-" quick way to add a line
+" Quick way to add a line
 nnoremap <CR> o<Esc>
-
-" --- Plugin Key Bindings ---
-
-" Bring up the NERDTree console or switch back to the main buffer
-" map <leader><leader> :NERDTreeFocusToggle<CR>
-
-" Close the console
-" map <leader>n :NERDTreeTabsClose<CR>
-
-" Search for files
-map <leader>r :NERDTreeFind<CR>
-
-" jump to definition
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 
 " ---- Status Line ----
-" right corner line num
+" Right corner line num
 set ruler
-" have a line indicate the cursor location
+
+" Have a line indicate the cursor location
 set cursorline
 
 set clipboard=unnamed
-
