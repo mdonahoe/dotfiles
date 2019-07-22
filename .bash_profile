@@ -8,13 +8,7 @@ export FIGNORE=$FIGNORE:.pyc
 
 export EDITOR='nvim'
 
-# homebrew told me to do this (local/bin before usr/bin)
-# export PATH=/usr/local/bin:$PATH
-# export PATH=/usr/local/share/python:$PATH
-# export PATH=/opt/local/bin:/opt/local/sbin:~/Documents:$PATH
-# export PATH=~/bin/:$PATH
 export PATH=~/aircam/:$PATH
-
 export HTTP_HOST='localhost'
 export PYTHONDONTWRITEBYTECODE=1
 
@@ -27,7 +21,6 @@ c_cyan=`tput setaf 6`
 c_red=`tput setaf 1`
 c_green=`tput setaf 2`
 c_sgr0=`tput sgr0`
-
 
 
 clone ()
@@ -82,37 +75,13 @@ source ~/cd_shorties.sh
 # my scripts
 alias serve="python -m SimpleHTTPServer"
 
-
 # todo
 alias todo='nvim ~/chrono/todo.txt'
-
-# notes
-alias notes='nvim ~/Dropbox/notes'
-
-# photo editing
-alias pixel='open -a Pixelmator'
-
-# hosts file
-alias hosts='sudo nvim /etc/hosts'
-
-# editing this file
-alias vbp="nvim ~/.bash_profile"
-alias sbp="source ~/.bash_profile"
 
 alias ql="qlmanage -p &>/dev/null"
 alias sl="ls"
 
-alias sandbox="ssh dho@serioussandbox.com"
-alias authorizer="cat ~/.ssh/id_rsa.pub | ssh dho@serioussandbox.com 'cat >> .ssh/authorized_keys'"
-
-alias disable_main_keyboard="sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
-alias enable_main_keyboard="sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/"
-
-alias synergize="/usr/bin/synergyc -f --no-tray --debug NOTE --name kursk matts-imac.local:24800"
-
-
 alias here="nautilus ."
-#alias ls='ls --color=tty' 2>/dev/null
 
 # Show the status of the current git repo and cd to its root. Fail if not in a repo.
 alias cg="git status && cd \`git rev-parse --show-toplevel\`"
@@ -134,6 +103,11 @@ export COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 
-export TERM=xterm-256color
+# This caused problems with tmux HOME/END
+# export TERM=xterm-256color
+# See https://stackoverflow.com/a/18601007/53997
+# Recommendation was to use screen-256color instead of xterm
+export TERM=screen-256color
+
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"

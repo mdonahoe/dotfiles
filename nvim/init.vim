@@ -72,8 +72,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
-" YCM jump to definition
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Let YCM/Jedi find the skydio python interpreter
 let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
@@ -139,3 +137,5 @@ set ruler
 set cursorline
 
 set clipboard=unnamed
+" YCM jump to definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
