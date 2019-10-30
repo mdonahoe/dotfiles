@@ -70,9 +70,13 @@ alias mergedgit="git for-each-ref --merged origin/master --format='%(authoremail
 # Opens gitk in the background so it doesnt consume the terminal
 alias gk="gitk --all > /dev/null 2>&1&"
 
+if [[ $(uname -s) == Darwin ]]
+then
+    source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+    source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+fi
+
 # show git branch and dirty state in the command prompt
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 PS1='$(__git_ps1 "%s")\[${c_sgr0}\]:\[${c_cyan}\]\W\[${c_sgr0}\]$ '
 

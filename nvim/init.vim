@@ -70,14 +70,14 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_always_populate_location_list = 1
 let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
-" YCM jump to definition
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Let YCM/Jedi find the skydio python interpreter
 let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
 if filereadable(mc_python_path)
     let g:ycm_path_to_python_interpreter = mc_python_path
 endif
+
+Plug 'powerline/powerline-fonts'
 
 " Nice status bar
 Plug 'vim-airline/vim-airline'
@@ -97,6 +97,9 @@ call plug#end()
 
 " ---- Simple Key Bindings ----
 let mapleader=","
+
+" YCM jump to definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Easy tabs
 noremap <leader>f :tabn<CR>
