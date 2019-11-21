@@ -109,5 +109,7 @@ export HISTFILESIZE=1000000000
 # Recommendation was to use screen-256color instead of xterm
 export TERM=screen-256color
 
+alias reverse_tunnel="ssh -R 19999:localhost:22 root@tower.skydio.com"
+
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"

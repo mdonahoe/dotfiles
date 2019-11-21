@@ -39,8 +39,11 @@ set background=dark
 
 set wildignore+=*.runlog
 set wildignore+=*/build/*
+set wildignore+=*/build/*
 set wildignore+=*/.git/*
 set wildignore+=*/third_party/*
+set wildignore+=*/lcmtype_auto_translation/lcmtypes/*
+set wildignore+=*/lcmtype_auto_translation/registry/*
 
 " Try to keep the edit line centered vertically on screen
 set so=999
@@ -63,7 +66,7 @@ Plug 'gmarik/Vundle.vim'
 " My bundles here
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_max_files = 25000
-let g:ctrlp_custom_ignore = 'build\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'build\|DS_Store\|git|vehicle_logs'
 
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe'
