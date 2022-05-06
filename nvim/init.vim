@@ -79,7 +79,7 @@ set completeopt=menu,menuone
 " Let YCM/Jedi find the skydio python interpreter
 let mc_python_path = '/home/skydio/aircam/build/host_aircam/bin/mc_python'
 if filereadable(mc_python_path)
-    let g:ycm_path_to_python_interpreter = mc_python_path
+    " let g:ycm_path_to_python_interpreter = mc_python_path
 endif
 
 " Nice status bar

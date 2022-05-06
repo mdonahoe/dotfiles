@@ -112,14 +112,3 @@ export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"
 
 # Alias for Yubikey pin prompt
 alias yubact="ssh-add -D && ssh-add -e /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so; ssh-add -s /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so"
-
-
-# Auto finds ssh-agent
-. ~/yubikey_scripts/ssh-find-agent/ssh-find-agent.sh
-ssh_find_agent -a
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-    eval $(ssh-agent) > /dev/null
-    ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-fi
-
