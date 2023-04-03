@@ -1,4 +1,5 @@
 # highlight different files
+source ~/.bashrc
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
@@ -109,6 +110,9 @@ alias reverse_tunnel="ssh -R 19999:localhost:22"
 
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"
+export CLOUD_CLIENT_EMAIL=matt@skydio.com
 
 # Alias for Yubikey pin prompt
 alias yubact="ssh-add -D && ssh-add -e /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so; ssh-add -s /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so"
+
+if [ -e /home/matt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/matt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

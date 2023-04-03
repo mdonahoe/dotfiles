@@ -61,15 +61,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 
 " let Vundle manage Vundle (required)
-Plug 'gmarik/Vundle.vim'
 
 " My bundles here
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_max_files = 25000
-let g:ctrlp_custom_ignore = 'build\|DS_Store\|git|vehicle_logs'
 
 Plug 'vim-scripts/a.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'branch': 'legacy-c++11' }
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_always_populate_location_list = 1
@@ -94,6 +90,14 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=0
 hi IndentGuidesEven ctermbg=8
+
+" Plug 'github/copilot.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'f-person/git-blame.nvim'
+
 
 " Initialize plugin system
 call plug#end()
@@ -131,6 +135,8 @@ noremap <leader>d :noh<CR>
 " Quick way to add a line
 nnoremap <CR> o<Esc>
 
+
+nnoremap <C-p> :GFiles<Cr>
 
 " ---- Status Line ----
 " Right corner line num
