@@ -7,11 +7,14 @@ Steps to setup a new machine
 2. Upload key to github
 3. Clone this repo
 4. Run link.sh
-5. Install neovim
+5. build neovim
+    - clone neovim/neovim
+    - follow build instructions and dont forget to install pre-reqs
+    - install pip and pynvim
 6. Download vim-plug (for neovim)
 7. nvim:PlugInstall
 9. pip install neovim (or /usr/bin/python3.8 -m pip install pynvim)
-9. cd YouCompleteMe; ./install.py --clang-completer
-10. Create some bash shortcuts in ~/cd_shorties.sh
-11. Install powerline-fonts
-12. Update terminal colorscheme
+10. cd YouCompleteMe; ./install.py --clang-completer
+11. Create some bash shortcuts in ~/cd_shorties.sh
+12. Install powerline-fonts
+13. Update terminal colorscheme

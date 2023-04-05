@@ -106,7 +106,7 @@ export TERM=screen-256color
 # Create a reverse ssh tunnel `reverse_tunnel username@example.com`
 # You can then gain access to the original machine via the public server.
 # Log in to username@example.com from another machine and do `ssh username@localhost:19999`
-alias reverse_tunnel="ssh -R 19999:localhost:22"
+alias reverse_tunnel="ssh -R 19998:localhost:22"
 
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/aircam/build/host_aircam/bin:$PATH"
@@ -114,5 +114,7 @@ export CLOUD_CLIENT_EMAIL=matt@skydio.com
 
 # Alias for Yubikey pin prompt
 alias yubact="ssh-add -D && ssh-add -e /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so; ssh-add -s /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so"
-
 if [ -e /home/matt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/matt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Temp hack to fix java install
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

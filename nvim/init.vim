@@ -67,9 +67,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-scripts/a.vim'
 Plug 'Valloric/YouCompleteMe', { 'branch': 'legacy-c++11' }
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_always_populate_location_list = 1
-let g:ycm_server_keep_logfiles = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_always_populate_location_list = 1
+" let g:ycm_server_keep_logfiles = 1
 set completeopt=menu,menuone
 
 " Let YCM/Jedi find the skydio python interpreter
