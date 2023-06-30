@@ -33,6 +33,11 @@ clone ()
     git clone git@github.com:${1}.git;
 }
 
+rk ()
+{
+    tailscale status | grep $@ | awk '{ print $1 }'
+}
+
 # Repeat a command until it succeeds!
 # Useful for editing unit tests, or re-running a flaky upload command.
 hammer ()
